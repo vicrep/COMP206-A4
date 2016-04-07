@@ -42,7 +42,7 @@ h1, h2, h3 {
 }
 
 .splash {
-    background: linear-gradient(to bottom, #a90329 0%,#8f0222 44%,#6d0019 100%);
+    background: linear-gradient(#a90329, #8f0222);
     color: #f4f4f4;
 }
 
@@ -56,6 +56,25 @@ h1, h2, h3 {
     -webkit-box-shadow: 0 0 15px 0 rgba(86,86,86,1);
     -moz-box-shadow: 0 0 15px -5px rgba(86,86,86,1);
     box-shadow: 0 0 15px 0 rgba(86,86,86,1);
+}
+
+button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 8px 15px;
+    font-size: 15pt;
+
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    border: none;
+
+    -webkit-box-shadow: 0 0 5px 0 rgba(86,86,86,1);
+    -moz-box-shadow: 0 0 5px 0 rgba(86,86,86,1);
+    box-shadow: 0 0 5px 0 rgba(86,86,86,1);
+
+    background: #e3e3e3;
 }
 
 /* Media Utilities for a responsive breaking point @ 768px */
