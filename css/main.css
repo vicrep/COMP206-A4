@@ -42,9 +42,20 @@ h1, h2, h3 {
 }
 
 .splash {
-    padding: 25px;
     background: linear-gradient(to bottom, #a90329 0%,#8f0222 44%,#6d0019 100%);
     color: #f4f4f4;
+}
+
+.card {
+    padding: 25px;
+
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+    border-radius:5px;
+
+    -webkit-box-shadow: 0 0 15px 0 rgba(86,86,86,1);
+    -moz-box-shadow: 0 0 15px -5px rgba(86,86,86,1);
+    box-shadow: 0 0 15px 0 rgba(86,86,86,1);
 }
 
 /* Media Utilities for a responsive breaking point @ 768px */
