@@ -4,11 +4,13 @@ Final Assignment for COMP 206 - Intro to Software Systems (McGill, W'16)
 ## I. Setting up the hosting Server
 
 Website will have :
+
 1. Welcome/landing Pages
 2. Login/new user profile page
 3. Dashboard
 4. View a friend's profile page
 5. Make a friend page
+
 
 ## II. Creating the Website Pages
 
