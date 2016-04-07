@@ -1,0 +1,56 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,700,100);
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #212121;
+    background: #f4f4f4;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+h1, h2, h3 {
+    font-weight: 100;
+}
+
+.text-light {
+    color: #f4f4f4;
+}
+
+.container {
+    width: 100%;
+}
+
+.flex-container {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+
+    height: 100vh;
+}
+
+.flex-align-bottom {
+    align-self: flex-end;
+}
+
+.flex-align-center {
+    align-self: center;
+}
+
+.center-block {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.splash {
+    padding: 25px;
+    background: linear-gradient(to bottom, #a90329 0%,#8f0222 44%,#6d0019 100%);
+    color: #f4f4f4;
+}
+
+/* Media Utilities for a responsive breaking point @ 768px */
+@media (min-width: 768px) {
+    .flex-container, .container {
+        padding-left: 75px;
+        padding-right: 75px;
+    }
+}
