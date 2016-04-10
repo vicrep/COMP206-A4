@@ -2,8 +2,8 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    color: #212121;
-    background: #f4f4f4;
+    color: #586e75;
+    background: #fdf6e3;
     width: 100%;
     overflow-x: hidden;
 }
@@ -12,8 +12,27 @@ h1, h2, h3 {
     font-weight: 100;
 }
 
-.text-light {
-    color: #f4f4f4;
+.bg-inverse {
+    background: #002b36;
+    color: #93a1a1;
+}
+
+.text-success {
+    color: #859900;
+}
+
+.text-danger {
+    color: #dc322f;
+}
+
+.bg-success {
+    background: #859900;
+    color: #fdf6e3;
+}
+
+.bg-danger {
+    background: #dc322f;
+    color: #fdf6e3;
 }
 
 .container {
@@ -25,7 +44,9 @@ h1, h2, h3 {
     display: -webkit-flex;
     display: flex;
 
-    height: 100vh;
+    flex-wrap: wrap;
+
+    min-height: 100vh;
 }
 
 .flex-align-bottom {
@@ -42,27 +63,27 @@ h1, h2, h3 {
 }
 
 .splash {
-    background: linear-gradient(#a90329, #8f0222);
-    color: #f4f4f4;
+    background: linear-gradient(#dc322f, #cb4b16);
+    color: #fdf6e3;
 }
 
 .card {
-    padding: 25px;
+    padding: 20px;
 
     -webkit-border-radius:5px;
     -moz-border-radius:5px;
     border-radius:5px;
 
-    -webkit-box-shadow: 0 0 15px 0 rgba(86,86,86,1);
-    -moz-box-shadow: 0 0 15px -5px rgba(86,86,86,1);
-    box-shadow: 0 0 15px 0 rgba(86,86,86,1);
+    -webkit-box-shadow: 0 0 15px 0 #657b83;
+    -moz-box-shadow: 0 0 15px -5px #657b83;
+    box-shadow: 0 0 15px 0 #657b83;
 }
 
 button {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    padding: 8px 15px;
+    padding: 8px 20px;
     font-size: 15pt;
 
     -webkit-border-radius: 3px;
@@ -70,11 +91,43 @@ button {
     border-radius: 3px;
     border: none;
 
-    -webkit-box-shadow: 0 0 5px 0 rgba(86,86,86,1);
-    -moz-box-shadow: 0 0 5px 0 rgba(86,86,86,1);
-    box-shadow: 0 0 5px 0 rgba(86,86,86,1);
+    -webkit-box-shadow: 0 0 5px 0 #657b83;
+    -moz-box-shadow: 0 0 5px 0 #657b83;
+    box-shadow: 0 0 5px 0 #657b83;
 
-    background: #e3e3e3;
+    background: #eee8d5;
+
+    color: #586e75;
+}
+
+.flex-grow-1, .flex-grow-2 {
+    margin: 15px;
+}
+
+.flex-grow-1 {
+    flex-grow: 1;
+}
+
+.flex-grow-2 {
+    flex-grow: 2;
+}
+
+label {
+    display: flex;
+    align-items: center;
+    font-size: 15pt;
+    padding: 10px;
+}
+
+input {
+    flex-grow: 1;
+    font-size: 15pt;
+    padding: 5px;
+    margin-left: 10px;
+    border: none;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
 }
 
 /* Media Utilities for a responsive breaking point @ 768px */
