@@ -1,20 +1,64 @@
 #include <stdlib.h>
 #include <stdio.h>
-#define USR_DATA "./users.txt"
+#define USR_DATA "users.txt"
+#define RESP_HTML_START printf("Content-type: text/html\n\n<html><body>\n")
+#define RESP_HTML_END printf("\n</body></html>\n")
+#define BOOL int
+#define TRUE 1
+#define FALSE 0
+
+struct User {
+    char    name[256];
+    char    job[256];
+    char    username[256];
+    char    pwd[256];
+};
+
+
+BOOL addUser(struct User usr) {
+    FILE *f = fopen(USR_DATA, "+a");
+
+    char tmp[512];
+    while(fgets(tmp, 512, f) != EOF) {
+        char* username;
+         username = strtok(tmp, ";");
+        if (!strcmp(username, usr.username)) return FALSE;
+    };
+
+    fprintf(f, "%s;%s;%s;%s\n", usr.username, usr.pwd, usr.name, usr.job);
+    fclose(f);
+
+    return TRUE;
+}
 
 int main(void) {
-    char Buffer[512];
-    int InputLength = atoi( getenv("INPUT_LENGTH") );
-    fread( Buffer, InputLength, 1, stdin );
 
+    char c;
+    int i = 0;
+    char buffer[512];
+    int len = atoi(getenv("CONTENT_LENGTH"));
 
+    while ((c = getchar()) != EOF && i < len) {
+        if (i < 512) {
+            if (c!='+') buffer[i] = c;
+            else buffer[i]=' ';
+            i++;
+        }
+    }
+    buffer[i] = '\0';
 
-    printf("Content-type: text/html\n\n");
-    printf("<HTML><BODY>\n");
-    printf("<P>Hey! This is my first CGI response!</P>\n");
-    printf("<pre>%s</pre>\n", Buffer);
-    printf( "</BODY></HTML>\n");
+    struct User usr;
+    sscanf(buffer, "name=%s&job=%s&usr=%s&pwd=%s", usr.name, usr.job, usr.username, usr.pwd);
 
-    return 0;
+    RESP_HTML_START;
+    if(addUser(usr)) {
+        printf("<h3>Thank you for signing up!</h2>\n");
+        printf("<p>You may now <a href='../login.html'>log in</a>.</p>\n");
+    } else {
+        printf("<h3>Sorry, there already exists a user with the username: %s</h3>\n", usr.username);
+        printf("<p>Please <a href='../login.html'>try again</a>.</p>\n");
+    }
+    RESP_HTML_END;
 
+    exit(0);
 }
