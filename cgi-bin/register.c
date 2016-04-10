@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 #define USR_DATA "users.txt"
 #define RESP_HTML_START printf("Content-type: text/html\n\n<html><body>\n")
 #define RESP_HTML_END printf("\n</body></html>\n")
@@ -48,16 +49,26 @@ int main(void) {
     buffer[i] = '\0';
 
     struct User usr;
-    sscanf(buffer, "name=%s&job=%s&usr=%s&pwd=%s", usr.name, usr.job, usr.username, usr.pwd);
+
+    char *delim = "=&";
+    strtok(buffer, delim);
+    strcpy(usr.name, strtok(NULL, delim));
+    strtok(NULL, delim);
+    strcpy(usr.job, strtok(NULL, delim));
+    strtok(NULL, delim);
+    strcpy(usr.username, strtok(NULL, delim));
+    strtok(NULL, delim);
+    strcpy(usr.pwd, strtok(NULL, delim));
 
     RESP_HTML_START;
-    if(addUser(usr)) {
-        printf("<h3>Thank you for signing up!</h2>\n");
-        printf("<p>You may now <a href='../login.html'>log in</a>.</p>\n");
-    } else {
-        printf("<h3>Sorry, there already exists a user with the username: %s</h3>\n", usr.username);
-        printf("<p>Please <a href='../login.html'>try again</a>.</p>\n");
-    }
+//    if(addUser(usr)) {
+//        printf("<h3>Thank you for signing up!</h2>\n");
+//        printf("<p>You may now <a href='../login.html'>log in</a>.</p>\n");
+//    } else {
+//        printf("<h3>Sorry, there already exists a user with the username: %s</h3>\n", usr.username);
+//        printf("<p>Please <a href='../login.html'>try again</a>.</p>\n");
+//    }
+    printf("<ul><li>%s</li><li>%s</li><li>%s</li><li>%s</li></ul>", usr.name, usr.username, usr.job, usr.pwd);
     RESP_HTML_END;
 
     exit(0);
