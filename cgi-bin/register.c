@@ -1,19 +1,10 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
-#define USR_DATA "users.txt"
-#define RESP_HTML_START printf("Content-type: text/html\n\n<html><head><link rel=\"stylesheet\" type=\"text/css\" href=\"../css/main.css\"></head><body>\n")
-#define RESP_HTML_END printf("\n</body></html>\n")
-#define BOOL int
-#define TRUE 1
-#define FALSE 0
 
-struct User {
-    char    name[256];
-    char    job[256];
-    char    username[256];
-    char    pwd[256];
-} usr;
+#include "users.h"
+
+struct User usr;
 
 
 BOOL verifyUser() {
@@ -33,7 +24,7 @@ BOOL verifyUser() {
 
 void addUser() {
     FILE *f = fopen(USR_DATA, "a");
-    fprintf(f, "%s;%s;%s;%s", usr.username, usr.pwd, usr.name, usr.job);
+    fprintf(f, "\n%s;%s;%s;%s", usr.username, usr.pwd, usr.name, usr.job);
     fclose(f);
 }
 
@@ -53,15 +44,7 @@ int main(void) {
     }
     buffer[i] = '\0';
 
-    char *delim = "=&";
-    strtok(buffer, delim);
-    strcpy(usr.name, strtok(NULL, delim));
-    strtok(NULL, delim);
-    strcpy(usr.job, strtok(NULL, delim));
-    strtok(NULL, delim);
-    strcpy(usr.username, strtok(NULL, delim));
-    strtok(NULL, delim);
-    strcpy(usr.pwd, strtok(NULL, delim));
+    usr = getUser(buffer);
 
     RESP_HTML_START;
     if(verifyUser()) {
