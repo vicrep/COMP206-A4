@@ -137,3 +137,44 @@ input {
         padding-right: 75px;
     }
 }
+
+.mymenu {
+  text-transform: uppercase;
+  text-align: center;
+  top: 0px;
+  left: 0px;
+  z-index: 9999;
+  position: fixed;
+  width: 100%;
+  background-color: white;
+  transition-duration: 1s;
+}
+
+.mymenu ul{
+  list-style-type: none; /* we need this to remove the bullets*/
+  display: block;
+  width: 800px;
+  margin: 0;
+  padding: 0;
+}
+
+.mymenu li{
+  float: left; /* allows navigation to be displayed in one line*/
+}
+
+.mymenu li a{
+  display: block;
+  color: black;
+  letter-spacing: .1em;
+  text-align: center;
+  padding: 10px;
+  text-decoration: none;
+}
+
+.mymenu li a:hover{
+  color: #586e75;
+}
+
+.dashboard {
+    margin-top: 100px;
+}

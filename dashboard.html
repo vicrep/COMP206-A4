@@ -1,10 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
-<body>
 
+<body>
+<div class="dashboard">
+<h2>Welcome to your Dashboard</h2>
+<!--Status Update-->
+<div class="mymenu">
+	<ul>
+		<li><a href="#"> Logout </a>
+		<li><a href="#"> Make A Friend </a>
+		<li><a href="#"> See A Friend </a>
+	</ul>
+</div>
+
+<!--Status Update-->
+<form name="input" action="http://cgi.cs.mcgill.ca/~jpined1/status.py" method="get">
+	<b>Status: <input type="text" name="status"></br>
+	<input type="submit" value="Submit">
+</form>
+</div>
 </body>
+
 </html>
