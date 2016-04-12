@@ -6,6 +6,17 @@
 
 struct User usr;
 
+void getUser(char *req) {
+    char *delim = "=&";
+    strtok(req, delim);
+    strcpy(usr.name, strtok(NULL, delim));
+    strtok(NULL, delim);
+    strcpy(usr.job, strtok(NULL, delim));
+    strtok(NULL, delim);
+    strcpy(usr.username, strtok(NULL, delim));
+    strtok(NULL, delim);
+    strcpy(usr.pwd, strtok(NULL, delim));
+}
 
 BOOL verifyUser() {
     FILE *f = fopen(USR_DATA, "r");
@@ -44,7 +55,7 @@ int main(void) {
     }
     buffer[i] = '\0';
 
-    usr = getUser(buffer);
+    getUser(buffer);
 
     RESP_HTML_START;
     if(verifyUser()) {
