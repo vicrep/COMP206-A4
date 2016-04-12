@@ -28,12 +28,23 @@ Website will have :
 * Directed towards a particular industry
 * ONLY HTML
 
+HTML + CGI + C
+
 [GLORY=CSS]
 
-HTML + CGI + C
-The Dashboard Pages
+### The Dashboard Pages
 Python + HTML + CGI
-The Make a Friend Page
-Python
-The See a Friend Page
+
+### The Make a Friend Page
+(Python)
+
++ Displays a **list of checkboxes with all the users** (*i.e* every user on users.txt) **except for the current user**
+
++ Once the "Add friends" button is clicked, display a message according to the number of new friends (if any) and allows the user to go back to the Dashboard
+
++ The new friends are appended at the current user's entry in friends.txt, **without repetition**.
+
++ Creates makefriends_buffer.txt (that gets erased and created again everytime we call the script) since I haven't figured out how to change a file in place in python...
+
+### The See a Friend Page
 C
