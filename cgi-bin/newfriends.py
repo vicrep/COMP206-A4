@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-# Modules for CGI handling
+# Modules
 
 import sys
 import os.path
@@ -8,7 +8,7 @@ import cgi,cgitb
 
 # Definitions
 
-BEGIN = "Content-type:text/html\n\n" + "<html><head><link rel=\"stylesheet\" type=\"text/css\" href=\"../css/main.css\"></head><body>"
+BEGIN = "Content-type:text/html\n\n" + "<html lang=\"en\"><head><title>New Friends Report</title><link rel=\"stylesheet\" type=\"text/css\" href=\"../css/main.css\"></head><body>"
 END = "</body></html>"
 ERROR_MSG = BEGIN + "Caramba" + END
 FORM_BEGIN = "<form action=\"/cgi-bin/newfriends.py\" method=\"POST\" target=\"_blank\">"
@@ -20,8 +20,8 @@ CURRENT = "currentusername"
 
 UserList = []
 
-if os.path.isfile('../users.txt'):
-    f = open("../users.txt", "r")
+if os.path.isfile('users.txt'):
+    f = open("users.txt", "r")
 else:
     sys.exit(ERROR_MSG)
 
@@ -44,13 +44,13 @@ for i in range(0, len(UserList)):
 
 # Add the selected users to the friends list of the current user in friends.txt
 
-if os.path.isfile('../friends.txt'):
-    f = open("../friends.txt", "r")
+if os.path.isfile('friends.txt'):
+    f = open("friends.txt", "r")
 else:
     sys.exit(ERROR_MSG)
 
-if os.path.isfile('../makefriends_buffer.txt'):
-    buffer = open("../makefriends_buffer.txt", "w")
+if os.path.isfile('makefriends_buffer.txt'):
+    buffer = open("makefriends_buffer.txt", "w")
 else:
     sys.exit(ERROR_MSG)
 
@@ -77,13 +77,13 @@ for line in f:
 f.close()
 buffer.close()
 
-if os.path.isfile('../friends.txt'):
-    f = open("../friends.txt", "w")
+if os.path.isfile('friends.txt'):
+    f = open("friends.txt", "w")
 else:
     sys.exit(ERROR_MSG)
 
-if os.path.isfile('../makefriends_buffer.txt'):
-    buffer = open("../makefriends_buffer.txt", "r")
+if os.path.isfile('makefriends_buffer.txt'):
+    buffer = open("makefriends_buffer.txt", "r")
 else:
     sys.exit(ERROR_MSG)
 
@@ -98,16 +98,16 @@ f.close()
 
 print BEGIN
 if count>1:
-        print str(count) + " friends have been added to your network !"
-        print BACK_TO_DASHBOARD
-        print END
+    print str(count) + " friends have been added to your network !"
+    print BACK_TO_DASHBOARD
+    print END
 elif count == 1:
     print "You've added a friend to your network !"
     print BACK_TO_DASHBOARD
     print END
 else:
-        print "These users were already your friends !"
-        print BACK_TO_DASHBOARD
-        print END
+    print "These users were already your friends !"
+    print BACK_TO_DASHBOARD
+    print END
 
                                                                                                                                                                                                       108,0-1       Bot

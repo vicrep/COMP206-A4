@@ -8,7 +8,7 @@ import cgi
 
 # Definitions
 
-BEGIN = "Content-type:text/html\n\n" + "<html><head><link rel=\"stylesheet\" type=\"text/css\" href=\"../css/main.css\"></head><body>"
+BEGIN = "Content-type:text/html\n\n" + "<html lang=\"en\"><head><title>Add Friends</title><link rel=\"stylesheet\" type=\"text/css\" href=\"../css/main.css\"></head><body>"
 END = "</body></html>"
 ERROR_MSG = BEGIN + "Caramba !" + END
 FORM_BEGIN = "<form action=\"newfriends.py\" method=\"POST\" target=\"_blank\">"
@@ -21,8 +21,8 @@ CURRENT = 'currentusername'
 UserList = []
 
 
-if os.path.isfile('../users.txt'):
-    f = open("../users.txt", "r")
+if os.path.isfile('users.txt'):
+    f = open("users.txt", "r")
 else:
     sys.exit(ERROR_MSG)
 
