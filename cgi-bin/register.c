@@ -35,7 +35,8 @@ BOOL verifyUser() {
 
 void addUser() {
     FILE *f = fopen(USR_DATA, "a");
-    fprintf(f, "\n%s;%s;%s;%s", usr.username, usr.pwd, usr.name, usr.job);
+    if (ftell(f) != 0) fprintf(f, "\n");
+    fprintf(f, "%s;%s;%s;%s", usr.username, usr.pwd, usr.name, usr.job);
     fclose(f);
 }
 

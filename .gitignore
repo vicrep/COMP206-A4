@@ -1,3 +1,5 @@
 .idea/
 COMP206-A4.iml
 CMakeLists.txt
+cgi-bin/register.cgi
+cgi-bin/login.cgi
