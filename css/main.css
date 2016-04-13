@@ -137,3 +137,110 @@ input {
         padding-right: 75px;
     }
 }
+
+.mymenu {
+  text-transform: uppercase;
+  text-align: center;
+  top: 0px;
+  left: 0px;
+  z-index: 9999;
+  position: fixed;
+  width: 100%;
+
+    display: block;
+    padding: 8px 20px;
+    font-size: 10pt;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 1px;
+    border: none;
+
+    -webkit-box-shadow: 0 0 5px 0 #657b83;
+    -moz-box-shadow: 0 0 5px 0 #657b83;
+    box-shadow: 0 0 5px 0 #657b83;
+
+    background: #eee8d5;
+
+    color: #586e75;
+
+
+}
+
+.mymenu ul{
+  list-style-type: none; /* we need this to remove the bullets*/
+  display: block;
+  width: 800px;
+  margin: 0;
+  padding: 0;
+}
+
+.mymenu li{
+  float: left; /* allows navigation to be displayed in one line*/
+
+}
+
+.mymenu li a:hover{
+  color: #586e75;
+}
+
+.dashboard {
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.newsfeed p{
+  color: #586e75;
+  font-size: 100%;
+  font-weight: lighter;
+}
+
+.statusUpdate{
+  display: block;
+  vertical-align:top;
+  margin-right:auto;
+  margin-left:auto;
+}
+
+.statusUpdate button {
+    display: block;
+    padding: 8px 20px;
+    font-size: 15pt;
+    vertical-align: top;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    border: none;
+
+    -webkit-box-shadow: 0 0 5px 0 #657b83;
+    -moz-box-shadow: 0 0 5px 0 #657b83;
+    box-shadow: 0 0 5px 0 #657b83;
+
+    background: #eee8d5;
+
+    color: #586e75;
+}
+
+.post {
+    display: block;
+    padding: 8px 20px;
+    font-size: 10pt;
+    vertical-align: top;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    border: none;
+
+    
+    -webkit-box-shadow: 0 0 5px 0 #657b83;
+    -moz-box-shadow: 0 0 5px 0 #657b83;
+    box-shadow: 0 0 5px 0 #657b83;
+
+    background: #eee8d5;
+
+    color: #586e75;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 15px;
+}
+

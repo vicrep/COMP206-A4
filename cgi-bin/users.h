@@ -4,3 +4,10 @@
 #define BOOL int
 #define TRUE 1
 #define FALSE 0
+
+struct User {
+    char    name[256];
+    char    job[256];
+    char    username[256];
+    char    pwd[256];
+};
