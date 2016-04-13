@@ -14,7 +14,7 @@ usr = form.getvalue('username', 'No user')
 #menu logout, make a friend, and see a friend
 print "<div class=\"mymenu\">"
 print "<ul>"
-print " <li><form action=\"./\" method =\"post\" target=\"_blank\">"
+print " <li><form action=\"../\" method =\"post\" target=\"_blank\">"
 print "  <input type=\"hidden\" name=\"username\" value=\"_\"></br>"
 print "  <button type=\"submit\" class=\"bg-success\">LOGOUT</button>"
 print "</form>"
@@ -54,14 +54,13 @@ friendsList = re.sub("[^\w] ", " ", friends).split()
 statusFile = open("status.txt",'r')
 lines = statusFile.readlines()
 statusFile.close()
-lines.reverse()
 count = 0
 for line in lines:
         if count < 20:
-                if line.split(None,1)[0] in friendsList:
+                if line.split(";",1)[0] in friendsList:
                 	statusUpdate = line
-                	friendName = line.split(" ",1)[0]
-                	statusUpdate = line.split(" ",1)[1]
+                	friendName = line.split(";",1)[0]
+                	statusUpdate = line.split(";",1)[1]
                 	print "<div class=\"post\">"
                 	print "<p><b>"+ friendName + "</b></br></p>"
                 	print "<p>" + statusUpdate
