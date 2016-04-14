@@ -34,10 +34,21 @@ BOOL verifyUser() {
 }
 
 void addUser() {
+
+    /* Update users.txt */
+
     FILE *f = fopen(USR_DATA, "a");
     if (ftell(f) != 0) fprintf(f, "\n");
     fprintf(f, "%s;%s;%s;%s", usr.username, usr.pwd, usr.name, usr.job);
     fclose(f);
+
+    /* Update friends.txt */
+
+    FILE *g = fopen(FRD_DATA, "a");
+    if (ftell(g) != 0) fprintf(g, "\n");
+    fprintf(g, "%s", usr.username);
+    fclose(g);
+
 }
 
 int main(void) {

@@ -6,10 +6,10 @@ form = cgi.FieldStorage()
 print("Content-Type: text/html")
 print
 print "<html>"
-print "<head><link rel=\"stylesheet\" type=\"text/css\" href=\"..\css\main.css\"></head>"
+print "<head><link rel=\"stylesheet\" type=\"text/css\" href=\"../css/main.css\"></head>"
 print "<body>"
 
-usr = form.getvalue('username', 'No user')
+CURRENT = form.getvalue('username', 'No user')
 
 #menu logout, make a friend, and see a friend
 print "<div class=\"mymenu\">"
@@ -18,8 +18,8 @@ print " <li><form action=\"../\" method =\"post\" target=\"_blank\">"
 print "  <input type=\"hidden\" name=\"username\" value=\"_\"></br>"
 print "  <button type=\"submit\" class=\"bg-success\">LOGOUT</button>"
 print "</form>"
-print " <li><form action=\"./makefriends.py\" method =\"post\" target=\"_blank\">"
-print "  <input type=\"hidden\" name=\"username\" value=", usr,"></br>"
+print " <li><form action=\"./makefriends.py\" method =\"post\" target=\"_self\">"
+print "  <input type=\"hidden\" name=\"username\" value=\""+ CURRENT +"\"></br>"
 print "  <button type=\"submit\" class=\"bg-success\">MAKE A FRIEND</button>"
 print "</form>"
 print " <li><form action=\"./seeafriend.py\" method =\"post\" target=\"_blank\">"
@@ -35,7 +35,7 @@ print "<h2>Welcome to your Dashboard</h2>"
 print "<div class=\"statusUpdate\">"
 print "<form name=\"input\" action=\"./status.py\" method=\"get\">"
 print "  <b>Status: <input type=\"text\" name=\"status\"></br>"
-print "  <input type=\"hidden\" name=\"username\" value=", usr, "></br>"
+print "  <input type=\"hidden\" name=\"username\" value=\"" + CURRENT + "\"></br>"
 print "  <button type=\"submit\" class=\"bg-success\">Update</button>"
 print "</form>"
 print "</div>"
@@ -47,9 +47,9 @@ friends=''
 line=''
 with open("friends.txt") as friend:
         for line in friend:
-                if line.split(None,1)[0] == usr:
+                if line.split(None,1)[0] == CURRENT:
                         friends = line
-friends = line + usr
+friends = line + CURRENT
 friendsList = re.sub("[^\w] ", " ", friends).split()
 statusFile = open("status.txt",'r')
 lines = statusFile.readlines()

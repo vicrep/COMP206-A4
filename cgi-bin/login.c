@@ -46,7 +46,7 @@ int main(void) {
 
     if(isAuth(usr, pwd)) {
         printf("<h2>Thank you for logging in, %s!</h2>", usr);
-        printf("<p><a href='./dashboard.py?username=%s'>Click here<a/> to go to your portal.</p>\n", usr);
+        printf("<p><form action=\"dashboard.py\"><input type=\"hidden\" name=\"username\" value=\"%s\"><input type=\"submit\" value=\"Go to my portal !\"></form></p>\n", usr);
     } else {
         printf("<h2>Whoops, you entered your username or password wrong.</h2>");
         printf("<p>Please <a href='../login.html'>try again</a>.</p>\n");
