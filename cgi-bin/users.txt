@@ -1,0 +1,3 @@
+vicrep;123456;Victor Repkow;Student
+Joanna;123456;Joanna Pineda;Student
+florestan;123456;Florestan Brunck;Student

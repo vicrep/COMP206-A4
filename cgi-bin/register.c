@@ -44,7 +44,7 @@ void addUser() {
 
     /* Update friends.txt */
 
-    FILE *g = fopen(FRD_DATA, "a");
+    FILE *g = fopen(FRIEND_DATA, "a");
     if (ftell(g) != 0) fprintf(g, "\n");
     fprintf(g, "%s", usr.username);
     fclose(g);
