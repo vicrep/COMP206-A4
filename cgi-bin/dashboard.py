@@ -14,7 +14,7 @@ CURRENT = form.getvalue('username', 'No user')
 #menu logout, make a friend, and see a friend
 print "<div class=\"mymenu\">"
 print "<ul>"
-print " <li><form action=\"../\" method =\"post\" target=\"_blank\">"
+print " <li><form action=\"../\" method =\"post\" target=\"_self\">"
 print "  <input type=\"hidden\" name=\"username\" value=\"_\"></br>"
 print "  <button type=\"submit\" class=\"bg-success\">LOGOUT</button>"
 print "</form>"
@@ -22,7 +22,7 @@ print " <li><form action=\"./makefriends.py\" method =\"post\" target=\"_self\">
 print "  <input type=\"hidden\" name=\"username\" value=\""+ CURRENT +"\"></br>"
 print "  <button type=\"submit\" class=\"bg-success\">MAKE A FRIEND</button>"
 print "</form>"
-print " <li><form action=\"./seefriends.cgi\" method =\"post\" target=\"_blank\">"
+print " <li><form action=\"./seefriends.cgi\" method =\"post\" target=\"_self\">"
 print "  <input type=\"hidden\" name=\"username\" value=\""+ CURRENT + "\"></br>"
 print "  <button type=\"submit\" class=\"bg-success\">SEE A FRIEND</button>"
 print "</form>"
