@@ -22,7 +22,7 @@ h1, h2, h3, .light-input {
 .bg-inverse {
     background: #002b36;
     color: #93a1a1;
-    text-shadow: 0 0 2px #002b36;
+    text-shadow: 0 0 1px #002b36!important;
 
 }
 
@@ -74,7 +74,7 @@ h1, h2, h3, .light-input {
 .splash {
     background: linear-gradient(#dc322f, #cb4b16) !important;
     color: #fdf6e3;
-    text-shadow: 0;
+    text-shadow: 0 0 1px #002b36!important;
     opacity: 0.8;
 }
 
