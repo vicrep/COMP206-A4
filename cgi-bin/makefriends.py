@@ -33,7 +33,8 @@ else:
 
 
 for line in f:
-    UserList.append(line.split(';'))
+	if line != '\n':
+    		UserList.append(line.split(';'))
 
 f.close()
 
