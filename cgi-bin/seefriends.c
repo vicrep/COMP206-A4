@@ -12,11 +12,13 @@ void getFriends(char *usr) {
     char *friends[256];
 
     while(fgets(fBuf, 512, f) != NULL) {
-        if(!strcmp(usr, strtok(fBuf, " "))) {
+        char *line = strdup(fBuf);
+        if(!strcmp(usr, strtok(line, " "))) {
             friends[0] = strtok(NULL, " ");
             while(friends[i] != NULL) friends[++i] = strtok(NULL, " ");
         }
     }
+    fclose(f);
 
     printf("<h2>My Friends:</h2>\n");
     if(i) {
