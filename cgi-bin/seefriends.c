@@ -13,9 +13,9 @@ void getFriends(char *usr) {
 
     while(fgets(fBuf, 512, f) != NULL) {
         char *line = strdup(fBuf);
-        if(!strcmp(usr, strtok(line, " "))) {
-            friends[0] = strtok(NULL, " ");
-            while(friends[i] != NULL) friends[++i] = strtok(NULL, " ");
+        if(!strcmp(usr, strtok(line, " \r\n"))) {
+            friends[0] = strtok(NULL, " \r\n");
+            while(friends[i] != NULL) friends[++i] = strtok(NULL, " \r\n");
         }
     }
     fclose(f);
