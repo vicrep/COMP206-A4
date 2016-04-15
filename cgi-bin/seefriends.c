@@ -27,7 +27,7 @@ void getFriends(char *usr) {
         }
         printf("<button type='submit' form='seefriends' formaction='./dashboard.py'>Back to Dashboard</button>\n");
     } else {
-        printf("<p><i>You don't have any friends yet!></i></p>\n");
+        printf("<p><i>You don't have any friends yet!</i></p>\n");
         printf("<button type='submit' form='seefriends' formaction='./makefriends.py'>Add More Friends</button>\n");
     }
 }
