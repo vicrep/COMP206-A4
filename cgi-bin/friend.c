@@ -29,7 +29,7 @@ void showFriend(char *friend) {
 
     while (fgets(fBuf, 512, f) != NULL && i < 5) {
         if(!strcmp(myFriend.username, strtok(fBuf, ";"))) {
-            printf("<p>%s</p>", strtok(NULL, ";"));
+            printf("<div class='post'><p>%s</p></div>", strtok(NULL, ";"));
             ++i;
         }
     }
