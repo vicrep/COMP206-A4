@@ -45,12 +45,20 @@ print "<h1>Newsfeed</h1>"
 print "<div class=\"newsfeed\">"
 friends=''
 line=''
+has_friends=0 #this will check if user is in friends.txt
 with open("friends.txt") as friend:
         for line in friend:
-                if line.split(None,1)[0] == CURRENT:
+                if line.split(" ",1)[0] == CURRENT:
                         friends = line
-friends = line + CURRENT
+                        has_friends = 1
+friends = friends + ' ' + CURRENT
+
+print "<p>",friends
+#tokenize the list of friends
 friendsList = re.sub("[^\w] ", " ", friends).split()
+#print "<p>", friendsList
+
+#now to find the statuses of the user and their friends
 statusFile = open("status.txt",'r')
 lines = statusFile.readlines()
 statusFile.close()
@@ -58,14 +66,14 @@ count = 0
 for line in lines:
         if count < 20:
                 if line.split(";",1)[0] in friendsList:
-                	statusUpdate = line
-                	friendName = line.split(";",1)[0]
-                	statusUpdate = line.split(";",1)[1]
-                	print "<div class=\"post\">"
-                	print "<p><b>"+ friendName + "</b></br></p>"
-                	print "<p>" + statusUpdate
-                	print "</div>"
-                	count += 1
+                        statusUpdate = line
+                        friendName = line.split(";",1)[0]
+                        statusUpdate = line.split(";",1)[1]
+                        print "<div class=\"post\">"
+                        print "<p><b>"+ friendName + "</b></br></p>"
+                        print "<p>" + statusUpdate
+                        print "</div>"
+                        count += 1
 
 print "</div>"
 print "</div>"
