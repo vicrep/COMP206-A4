@@ -16,7 +16,7 @@ CURRENT = form.getvalue('username', 'No user')
 BEGIN = "Content-type:text/html\n\n" + "<html lang=\"en\"><head><title>New Friends Report</title><link rel=\"stylesheet\" type=\"text/css\" href=\"../css/main.css\"></head><body>"
 END = "</body></html>"
 ERROR_MSG = BEGIN + "Caramba" + END
-BACK_TO_DASHBOARD = "<form action=\"dashboard.py\"><input type=\"hidden\" name=\"username\" value=\"" + CURRENT + "\"><input type=\"submit\" value=\"GO BACK TO MY DASHBOARD\"></form>"
+BACK_TO_DASHBOARD = "<form action=\"dashboard.py\"><input type=\"hidden\" name=\"username\" value=\"" + CURRENT + "\"><button type=\"submit\">BACK TO MY DASHBOARD</button></form>"
 
 # Retrieve Usernames/Full names
 
@@ -96,14 +96,14 @@ f.close()
 
 print BEGIN
 if count>1:
-    print str(count) + " friends have been added to your network !"
+    print "<center>" + str(count) + " friends have been added to your network ! </center><br/>"
     print BACK_TO_DASHBOARD
     print END
 elif count == 1:
-    print "You've added a friend to your network !"
+    print "<center> You've added a friend to your network ! </center><br/>"
     print BACK_TO_DASHBOARD
     print END
 else:
-    print "These users were already your friends !"
+    print "<center> These users were already your friends ! </center><br/>"
     print BACK_TO_DASHBOARD
     print END
