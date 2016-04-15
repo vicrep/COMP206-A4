@@ -53,7 +53,7 @@ with open("friends.txt") as friend:
                         has_friends = 1
 friends = friends + ' ' + CURRENT
 
-print "<p>",friends
+#print "<p>",friends
 #tokenize the list of friends
 friendsList = re.sub("[^\w] ", " ", friends).split()
 #print "<p>", friendsList
