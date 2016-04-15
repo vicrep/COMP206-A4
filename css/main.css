@@ -3,8 +3,9 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    color: #002b36;
-    background: #fdf6e3 url(../assets/bg-light.jpg) no-repeat center fixed;
+    color: #00161e;
+    text-shadow: 0 0 6px #fdf6e3;
+    background: #fff4f0 url(../assets/bg-light.jpg) no-repeat center fixed;
     background-size: cover;
     width: 100%;
     overflow-x: hidden;
@@ -21,6 +22,8 @@ h1, h2, h3, .light-input {
 .bg-inverse {
     background: #002b36;
     color: #93a1a1;
+    text-shadow: 0 0 2px #002b36;
+
 }
 
 .text-success {
@@ -71,6 +74,7 @@ h1, h2, h3, .light-input {
 .splash {
     background: linear-gradient(#dc322f, #cb4b16) !important;
     color: #fdf6e3;
+    text-shadow: 0;
     opacity: 0.8;
 }
 
